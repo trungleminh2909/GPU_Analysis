@@ -45,15 +45,25 @@ Selected key columns:
 
 ## ✅ Results
 
-- **Random Forest Regressor** achieved:
-  - **R² Score**: 0.82  
-  - **MSE**: 6.5
-- Random Forest effectively captured non-linear relationships and outperformed Linear Regression.
+### 🔹 Linear Regression (after outlier removal)
+- **R² Score**: 0.9657  
+- **Residual Standard Error (RSE)**: 18.46
+
+### 🔹 Random Forest Regressor
+- **R² Score (test)**: 0.9977  
+- **Accuracy**: 96.75%  
+- **Mean Absolute Error (MAE)**: 1.95  
+- **% Variance Explained**: 98.8  
+- **Mean Squared Residuals**: 152.93
+
+Random Forest significantly outperformed Linear Regression in capturing non-linear interactions and delivering more accurate predictions, with nearly perfect R² and low error metrics.
 
 ## 🔍 Key Findings
-- GPU memory bandwidth is strongly influenced by memory type, memory speed, and bus width.
-- Statistical testing revealed significant differences between GPU groups based on vendor and architecture.
-- Random Forest showed robust performance across both training and test sets.
+- GPU memory bandwidth is significantly influenced by **memory bus width**, **memory speed**, and **texture rate**, as revealed by both regression coefficients and statistical tests.
+- **Shapiro-Wilk** and **Levene’s tests** confirmed the need for non-parametric analysis, followed by **Dunn’s test** to identify group-wise differences.
+- Linear Regression achieved strong performance after outlier removal (R² = 0.9657), but struggled with non-linear patterns.
+- Random Forest Regressor provided the best predictive accuracy (R² = 0.9977), with low error (MAE = 1.95) and high explanatory power (98.8% variance explained).
+- Ensemble methods like Random Forest proved more robust and accurate than linear models for this multi-feature prediction task.
 
 ## 💻 Technologies Used
 
